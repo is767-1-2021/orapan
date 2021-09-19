@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class SecondPage extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
-    var circular;
     return Scaffold(
        appBar: AppBar(
          title: Text('Second Page'),

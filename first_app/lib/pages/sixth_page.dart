@@ -9,7 +9,7 @@ class SixthPage extends StatelessWidget{
     ),
     body: MyCustomForm(),
    );
- }
+  }
 }
 class MyCustomForm extends StatefulWidget{
   @override
@@ -41,6 +41,9 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
                   return null;
                },
+               onSaved: (value){
+                 _firstName = value;
+               },
              ),
             TextFormField(
               decoration:  InputDecoration(
@@ -57,7 +60,7 @@ class _MyCustomFormState extends State<MyCustomForm> {
                 },
                 onSaved: (value) {
                   _lastName = value;
-                }
+                },
               ),
               TextFormField(
                decoration: InputDecoration(
@@ -75,22 +78,25 @@ class _MyCustomFormState extends State<MyCustomForm> {
                   }
                   
                   return null;
-                }
+                },
+                onSaved: (value){
+                  _age = int.parse(value!);
+                },
               ),
               ElevatedButton(
                 onPressed: () {
                    if (_formKey.currentState!.validate()) {
                      _formKey.currentState!.save();
 
-                     ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                        content: Text ('Hoorayyyy = $_firstName $_lastName $_age'),
-                     ));
-                   }
-                 },
-                child : Text('Validate')
-              ),
-          ],
-      ),
+                     var response = 'Hoorayyy = $_firstName $_lastName $_age';
+
+                     Navigator.pop(context,response);
+                   } 
+                },
+                child : Text('Validate'),
+            ),
+         ],
+       ),
     );
-  }
+   }
  }

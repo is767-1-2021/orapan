@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'pages/fifth_page.dart';
 import 'pages/fourth_page.dart';
+import 'pages/seventh_page.dart';
 import 'pages/sixth_page.dart';
 import 'pages/third_page.dart';
 import 'pages/first_page.dart';
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
           bodyText2:TextStyle(color: Colors.purple),
         ),
       ),
-      initialRoute: '/sixth',
+      initialRoute: '/fourth',
        routes: <String, WidgetBuilder> {
         '/first':(context) => FirstPage  (),   
         '/second': (context)=> SecondPage (),
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
         '/fourth': (context)=> FourthPage (),
         '/fifth': (context)=> FifthPage (),
         '/sixth': (context)=> SixthPage (),
+        '/seventh': (context)=> SeventhPage (),
         }
      );
    }
