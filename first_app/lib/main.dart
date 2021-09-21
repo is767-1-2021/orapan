@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           bodyText2:TextStyle(color: Colors.purple),
         ),
       ),
-      initialRoute: '/fourth',
+      initialRoute: '/sixth',
        routes: <String, WidgetBuilder> {
         '/first':(context) => FirstPage  (),   
         '/second': (context)=> SecondPage (),
