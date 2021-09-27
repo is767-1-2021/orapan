@@ -30,6 +30,7 @@ class SeventhPage extends StatelessWidget {
     );
   }
 }
+
 class MovedCat extends StatelessWidget  {
     @override
     Widget build (BuildContext context) {

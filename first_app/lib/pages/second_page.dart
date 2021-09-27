@@ -6,6 +6,7 @@ class SecondPage extends StatelessWidget{
     return Scaffold(
        appBar: AppBar(
          title: Text('Second Page'),
+         centerTitle: true,
      ),
      floatingActionButton: FloatingActionButton(
        child: Icon(Icons.build_sharp),
@@ -27,21 +28,21 @@ class SecondPage extends StatelessWidget{
                     decoration : BoxDecoration(
                        color: Colors.green,
                        borderRadius: BorderRadius.circular(10.0),
-                 )
+                 ),
                 ),
                 Container(
                   child: Center(child: Text ('Name')),
                     decoration : BoxDecoration(
                        color: Colors.green,
                        borderRadius: BorderRadius.circular(10.0),
-                 )
+                 ),
                 ),
                 Container(
                   child: Center(child: Text ('Gender')),
                     decoration : BoxDecoration(
                        color: Colors.green,
                        borderRadius: BorderRadius.circular(10.0),
-                 )
+                 ),
                 ),
               ]
              ),

@@ -13,44 +13,44 @@ class FourthPage extends StatelessWidget{
        body: ListView.separated(
          padding: EdgeInsets.all(8.0),
          itemCount: entries.length,
-         itemBuilder:(context,index) {
+         itemBuilder: (context, index) {
            return ProductTitle(
              item: ProductItem(
                 name: 'Product ${entries[index]}',
                 price: '฿25',
-                colorShade: colorCodes[index %3],
+                colorShade: colorCodes[index % 3],
              ),
            );
          },
-         separatorBuilder: (context,index) => Divider(),
-         ),
+         separatorBuilder: (context, index) => Divider(),
+          ),
         );
       }
     }
      class ProductItem {
         final String name;
-        final String price ; 
+        final String price; 
         final int colorShade;
 
         const ProductItem(
           {Key? key, required this.name,
-          required this.price ,required this .colorShade});
+          required this.price, required this.colorShade});
      }
 
-     class ProductTitle extends StatelessWidget{
-       final ProductItem item;
+class ProductTitle extends StatelessWidget{
+  final ProductItem item;
 
-       const ProductTitle ({Key? key, required this.item}): super(key: key);
+  const ProductTitle({Key? key, required this.item}) : super(key: key);
 
      @override
      Widget build(BuildContext context) {
       return GestureDetector(
-        onTap: (){
+        onTap: () {
          Navigator.push (context,
           MaterialPageRoute(
-           builder: (context)=> ProductDetail (item: item),
+           builder: (context) => ProductDetail (item: item),
           ),
-       );
+        );
       },
      child: Container(
        height:  100,
@@ -62,6 +62,7 @@ class FourthPage extends StatelessWidget{
     );
   }
 }
+
 class ProductDetail extends StatelessWidget {
   final ProductItem item;
 

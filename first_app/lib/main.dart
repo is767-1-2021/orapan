@@ -1,4 +1,6 @@
+import 'package:first_app/model/first_form_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'pages/fifth_page.dart';
 import 'pages/fourth_page.dart';
@@ -9,7 +11,16 @@ import 'pages/first_page.dart';
 import 'pages/second_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+     MultiProvider(
+       providers: [
+         ChangeNotifierProvider(
+           create: (context) => FirstFormModel(),
+         ),
+       ],
+       child: MyApp(),
+     ),
+  );
 }
 class MyApp extends StatelessWidget {
   @override
@@ -18,20 +29,20 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
         primaryColor: Colors.amber,
-        accentColor: Colors.red,
+        accentColor: Colors.yellow,
         textTheme: TextTheme(
           bodyText2:TextStyle(color: Colors.purple),
         ),
       ),
-      initialRoute: '/sixth',
+      initialRoute: '/5',
        routes: <String, WidgetBuilder> {
-        '/first':(context) => FirstPage  (),   
-        '/second': (context)=> SecondPage (),
-        '/third': (context)=> ThirdPage (),
-        '/fourth': (context)=> FourthPage (),
-        '/fifth': (context)=> FifthPage (),
-        '/sixth': (context)=> SixthPage (),
-        '/seventh': (context)=> SeventhPage (),
+        '/1':(context) => FirstPage  (),   
+        '/2': (context)=> SecondPage (),
+        '/3': (context)=> ThirdPage (),
+        '/4': (context)=> FourthPage (),
+        '/5': (context)=> FifthPage (),
+        '/6': (context)=> SixthPage (),
+        '/7': (context)=> SeventhPage (),
         }
      );
    }
@@ -40,7 +51,6 @@ class MyApp extends StatelessWidget {
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
-
   final String title;
 
   @override
@@ -122,7 +132,7 @@ class _MyHomePageState extends State<MyHomePage> {
                  ),
                  ElevatedButton(
                     style: ElevatedButton.styleFrom(
-                     primary : Colors.red 
+                     primary : Colors.red ,
                     ),
                    onPressed: _incrementCounter,
                    child: Text('Increase'),
@@ -132,7 +142,6 @@ class _MyHomePageState extends State<MyHomePage> {
            ],
         ),
       ),
-    
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
