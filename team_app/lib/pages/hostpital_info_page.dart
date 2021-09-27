@@ -19,9 +19,11 @@ class MyCustomForm extends StatefulWidget{
 
 class _MyCustomFormState extends State<MyCustomForm> {
   final _formKey = GlobalKey<FormState> ();
-  String? _firstName;
-  String? _lastName;
-  int? _age;
+  String? _hospitalName;
+  String? _addressName;
+  String? _phoneNumber;
+  int? _numberPatient;
+  int? _numberStaff;
 
   @override
   Widget build(BuildContext context) {
@@ -37,61 +39,85 @@ class _MyCustomFormState extends State<MyCustomForm> {
                ),
                validator: (value) {
                  if (value == null || value.isEmpty) {
-                    return 'Please enter firstname.' ;
+                    return 'ใส่ชื่อโรงพยาบาล' ;
                  }
 
                   return null;
                },
                onSaved: (value){
-                 _firstName = value;
+                 _hospitalName = value;
                },
              ),
             TextFormField(
               decoration:  InputDecoration(
                 border: UnderlineInputBorder (),
-                labelText: 'Enter your last name ',
-                icon: Icon(Icons.family_restroom),
+                labelText: 'ใส่ที่อยู่โรงพยาบาล',
+                icon: Icon(Icons.home_filled),
               ),
               validator: (value) {
                 if (value == null || value.isEmpty) {
-                  return 'Please enter lastname.';
+                  return 'กรุณาใส่ที่อยู่โรงพยาลบาล.';
               }
 
                  return  null ;
                 },
                 onSaved: (value) {
-                  _lastName = value;
+                  _addressName = value;
                 },
               ),
               TextFormField(
                decoration: InputDecoration(
                   border: UnderlineInputBorder (),
-                  labelText: 'Enter your age',
+                  labelText: 'ใส่เบอร์โทรโรงพยาบาล',
                   icon: Icon(Icons.ring_volume),
                ),
                validator: (value) {
                  if (value == null || value.isEmpty) {
-                    return 'Please enter age.';
-                 }
-
-                  if (int.parse(value) < 18) {
-                     return 'Please enter valid age.';
+                    return 'กรุณาใส่เบอร์โรงพยาบาล';
                   }
-                  
                   return null;
                 },
                 onSaved: (value){
-                  _age = int.parse(value!);
+                  _phoneNumber = value;
+                },
+              ),
+              TextFormField(
+               decoration: InputDecoration(
+                  border: UnderlineInputBorder (),
+                  labelText: 'ใส่จำนวนคนไข้ที่รองรับได้',
+                  icon: Icon(Icons.ring_volume),
+               ),
+               validator: (value) {
+                 if (value == null || value.isEmpty) {
+                    return 'กรุณาใส่จำนวนคนไข้ที่รองรับได้';
+                  }
+                  return null;
+                },
+                onSaved: (value){
+                  _numberPatient = int.parse(value!);
+                },
+              ),
+               TextFormField(
+               decoration: InputDecoration(
+                  border: UnderlineInputBorder (),
+                  labelText: 'ใส่จำนวนเจ้าหน้าที่ที่ปฎิบัตรงาน',
+                  icon: Icon(Icons.ring_volume),
+               ),
+               validator: (value) {
+                 if (value == null || value.isEmpty) {
+                    return 'กรุณาใส่จำนวนเจ้าหน้าที่ที่ปฎิบัตรงาน';
+                  }
+                  return null;
+                },
+                onSaved: (value){
+                  _numberStaff = int.parse(value!);
                 },
               ),
               ElevatedButton(
                 onPressed: () {
                    if (_formKey.currentState!.validate()) {
                      _formKey.currentState!.save();
-
-                     var response = 'Hoorayyy = $_firstName $_lastName $_age';
-
-                     Navigator.pop(context,response);
+                     Navigator.pop(context);
                    } 
                 },
                 child : Text('Validate'),
