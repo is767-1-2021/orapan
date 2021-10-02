@@ -1,11 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:team_app/pages/hospital_scform_page.dart';
+import 'package:team_app/pages/hospital_show_page.dart';
 
+import 'model/model_hostpital_info_form.dart';
 import 'pages/hbooking_list_page.dart';
 import 'pages/hostpital_info_page.dart';
 import 'pages/ubooking_list_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers:[
+        ChangeNotifierProvider(
+          create: (context) => HospitalinfoFormModel(),
+        ),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -13,12 +26,19 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'I-Covid App',
       theme: ThemeData(
         
         primarySwatch: Colors.blue,
       ),
-      home: MyHomePage(title: 'Home Page'),
+    initialRoute: '/3',
+     routes : <String, WidgetBuilder> {
+       '/1':(context)=> UBookingListScreen (),
+       '/2':(context)=> HostpitalInfoScreen (),
+       '/3':(context)=> HBookingListScreen (),
+       '/4':(context)=> HostpitalScreen (),
+       '/5':(context)=> Hospitalshow (),
+     }
     );
   }
 }

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class HBookingListScreen extends StatelessWidget {
- final List<String> items = List<String>.generate(10, (index) => 'Item $index');
+ final List<String> entries = <String>['ปฎิทิน','อรพรรณ','ทะเล','นวลนาง','E','F','G'];
   @override
   Widget build(BuildContext context) {
       return Scaffold(
@@ -29,13 +29,21 @@ class HBookingListScreen extends StatelessWidget {
           backgroundColor: Color(0xFF473F97),
         ),
         //
-        body: ListView.builder(
-          itemCount: items.length,
-          itemBuilder: (context, index){
-            return ListTile(
-              title: Text(items[index]),
-            );
-          }
+        body: ListView(
+          children: <Widget>[
+            ListTile(
+             leading: Icon(Icons.calendar_today),
+              title : Text ('ปฎิทิน'),
+            ),
+            ListTile(
+             leading: Icon(Icons.people),
+              title : Text ('นาย ก.'),
+            ),
+            ListTile(
+             leading: Icon(Icons.people),
+              title : Text ('นาย ข.'),
+            ),
+          ],
         ),
       );
   }
