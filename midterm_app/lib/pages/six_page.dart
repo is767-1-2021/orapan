@@ -7,7 +7,7 @@ class SixPage extends StatelessWidget {
       return Scaffold(
         appBar: AppBar(
           title: Text(
-            'รายการการจองคิว',
+            'ผลตรวจ',
               style: TextStyle(
               fontSize: 20,
               fontWeight: FontWeight.w700,
