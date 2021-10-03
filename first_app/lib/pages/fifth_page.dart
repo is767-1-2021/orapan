@@ -25,7 +25,7 @@ class FifthPage extends StatelessWidget{
                ),
                 child: Center(
                  child: Text(
-                  'Page ${index+1}' , 
+                  'Menu ${index+1}' , 
                   style : Theme.of(context).textTheme.headline5,
                  ),
                ),
