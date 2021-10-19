@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class UBookingListScreen extends StatelessWidget {
- final List<String> items = List<String>.generate(10, (index) => 'Item $index');
+ final List<String> items = List<String>.generate(10, (index) => 'คิวที่$index ชื่อ');
   @override
   Widget build(BuildContext context) {
       return Scaffold(
