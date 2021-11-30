@@ -108,28 +108,28 @@ class _CalculatorPageState extends State<CalculatorPage> {
             Container(
               child : Row(
                 children: [
-            Text(
-              "MC", style: TextStyle(
+            Text("MC", 
+                    style: TextStyle(
                     fontSize: 15,
                     color: Colors.white),
             ),
-            Text(
-              "MR", style: TextStyle(
+            Text("MR", 
+                    style: TextStyle(
                     fontSize: 15,
                     color: Colors.white),
             ),
-            Text(
-              "M+", style: TextStyle(
+            Text("M+",
+                    style: TextStyle(
                     fontSize: 15,
                     color: Colors.white),
             ),
-            Text(
-              "M-", style: TextStyle(
+            Text("M-", 
+                    style: TextStyle(
                     fontSize: 15,
                     color: Colors.white),
             ),
-            Text(
-              "MS", style: TextStyle(
+            Text("MS", 
+                    style: TextStyle(
                     fontSize: 15,
                     color: Colors.white),
                   )
@@ -145,10 +145,12 @@ class _CalculatorPageState extends State<CalculatorPage> {
               buildNumberButton("%", numberButton: false, onTap: () {} ),
               buildNumberButton("CE", numberButton: false, onTap: () {
                 clearAnswer();
-              }),
+               }
+              ),
               buildNumberButton("C", numberButton: false, onTap: () {
                 clearAll();
-              }),
+               }
+              ),
               buildNumberButton("⌫", numberButton: false, onTap: () {
                 removeAnswerLast();
               }),
@@ -278,8 +280,9 @@ class _CalculatorPageState extends State<CalculatorPage> {
         operator = "";
         answerTemp = "";
         inputFull = "";
-      }
-    });
+       }
+     }
+    );
   }
 
   void addOperatorToAnswer(String op) {
@@ -307,8 +310,9 @@ class _CalculatorPageState extends State<CalculatorPage> {
     setState(() {
       if (!answer.contains(".")) {
         answer = answer + ".";
-      }
-    });
+       }
+     }
+    );
   }
 
   void addNumberToAnswer(int number) {
@@ -321,7 +325,8 @@ class _CalculatorPageState extends State<CalculatorPage> {
       else {
         answer += number.toString();
       }
-    });
+     }
+    );
   }
 
   void removeAnswerLast() {
@@ -354,14 +359,18 @@ class _CalculatorPageState extends State<CalculatorPage> {
                       child: Center(
                           child: Text(str,
                               style: TextStyle(
-                                  fontSize: 32, fontWeight: FontWeight.bold)))))));
+                                  fontSize: 28, fontWeight: FontWeight.bold)
+                                  )
+                                )
+                              )
+                            )));
     } else {
       widget = Container(
           margin: EdgeInsets.all(1),
           child: Material(
               color: Colors.blueGrey,
               child: InkWell(onTap: onTap,
-                  splashColor: Colors.blue,
+                  splashColor: Colors.grey.shade500,
                   child: Container(
                       height: 70,
                       child: Center(

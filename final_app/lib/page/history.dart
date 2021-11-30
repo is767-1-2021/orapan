@@ -39,9 +39,9 @@ class _HistoryPageState extends State<HistoryPage> {
     return isLoading
         ? Center(
             child: CircularProgressIndicator(
-                strokeWidth: 5.0, color: Colors.blueGrey[50]),
-          )
-        : Scaffold(
+                strokeWidth: 5.0, color: Colors.grey.shade500),
+          ):
+         Scaffold(
             appBar: AppBar(title: Text("History")),
             body: Consumer<HistoryProvider>(builder: (context, show, child) {
               return ListView.separated(
@@ -56,18 +56,22 @@ class _HistoryPageState extends State<HistoryPage> {
                           historylist[index].number + "=",
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 20,
+                            fontSize: 30,
                           ),
                           textAlign: TextAlign.right,
                         ),
                         subtitle: Text(
                           historylist[index].equal,
-                          style: TextStyle(color: Colors.white, fontSize: 25),
+                          style: TextStyle
+                          (color: Colors.white, fontSize: 20),
                           textAlign: TextAlign.right,
-                        ));
+                        )
+                      );
                   },
-                  separatorBuilder: (context, index) => Divider());
-            }),
+                  separatorBuilder: 
+                  (context, index) => Divider());
+                 }
+              ),
           );
-  }
+    }
 }
